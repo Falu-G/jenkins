@@ -1,8 +1,23 @@
-pipelineJob('pipelineJob') {
+// pipelineJob('pipelineJob') {
+//     definition {
+//         cps {
+//             script(readFileFromWorkspace('pipelineJob.groovy'))
+//             sandbox()
+//         }
+//     }
+// }
+
+pipelineJob('theme-park-job') {
     definition {
-        cps {
-            script(readFileFromWorkspace('pipelineJob.groovy'))
-            sandbox()
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url 'https://github.com/Falu-G/springboot-api-sample.git'
+                    }
+                    branch 'master'
+                }
+            }
         }
     }
 }
