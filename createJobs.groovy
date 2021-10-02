@@ -16,6 +16,7 @@ pipelineJob('theme-park-job') {
                         url 'https://github.com/Falu-G/springboot-api-sample.git'
                     }
                     branch 'master'
+                    scriptPath('Jenkinsfile-docker')
                 }
             }
         }
